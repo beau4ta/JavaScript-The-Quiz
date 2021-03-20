@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript: The Quiz</title>
+    <link href="styles.css" rel="stylesheet">
+   
+</head>
+<body>
+<div class="header">
+<div class="timer-container">
+    <p class="timer-title">Timer:</p>
+    <div class="time-count">120</div>
+    <p class="seconds">Seconds</p>
+</div>
+<div class="score-container">
+    <p class="score">Highscore:</p>
+    <p class="last-score"></p>
+</div>
+</div>
+
+<div class="title-container">
+    <h1 class="title">JavaScript: The Quiz</h1>
+    <h2 class="sub-title">Answer the questions within the time limit!
+        Every wrong answer subtracts 5 seconds from the timer.<br> 
+        The game ends when you answer all the questions or
+        you run out of time. Try for a highscore!
+    </h2>
+</div>
+
+<div class="card-flex">
+    <div class="card">
+        <h3>Click the button to start!</h3><br>
+        <div class="card-container">
+            <div class="button-container"><button onclick="switchCard()" class="start-button">START</button></div> 
+        </div>
+    </div>
+    </div>
+
+<div class="card-flex">
+<div class="question">
+    <h3>Question 1</h3><br>
+    <div class="card-container">
+        <div class="card-title">
+            <h4>What does JavaScript stand for?</h4><br>
+        </div>
+        <ol>
+            <li><input type="checkbox" id="answer1" value="blah blah blah">
+            <label for="answer1">Blah blah blah</label></li>
+            <li><input type="checkbox" id="answer1" value="blah blah blah">
+            <label for="answer1">Blah blah blah</label></li>
+            <li><input type="checkbox" id="answer1" value="blah blah blah">
+            <label for="answer1">Blah blah blah</label></li>
+            <li><input type="checkbox" id="answer1" value="blah blah blah">
+            <label for="answer1">Blah blah blah</label></li>
+        </ol>
+    </div>
+    <button class="card-button">Submit</button>
+</div>
+</div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
