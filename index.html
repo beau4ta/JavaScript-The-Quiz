@@ -15,8 +15,8 @@
     <p class="seconds">Seconds</p>
 </div>
 <div class="score-container">
-    <p class="score">Highscore:</p>
-    <p class="last-score"></p>
+    <p class="score">Last score:</p>
+    <p class="last-score"> 0</p>
 </div>
 </div>
 
@@ -33,34 +33,23 @@
     <div class="card">
         <h3>Click the button to start!</h3><br>
         <div class="card-container">
-            <div class="button-container"><button onclick="switchCard()" class="start-button">START</button></div> 
+            <div class="button-container"><button class="start-button">START</button></div> 
         </div>
     </div>
     </div>
 
 <div class="card-flex">
-<div class="question">
-    <h3>Question 1</h3><br>
-    <div class="card-container">
-        <div class="card-title">
-            <h4>What does JavaScript stand for?</h4><br>
-        </div>
-        <ol>
-            <li><input type="checkbox" id="answer1" value="blah blah blah">
-            <label for="answer1">Blah blah blah</label></li>
-            <li><input type="checkbox" id="answer1" value="blah blah blah">
-            <label for="answer1">Blah blah blah</label></li>
-            <li><input type="checkbox" id="answer1" value="blah blah blah">
-            <label for="answer1">Blah blah blah</label></li>
-            <li><input type="checkbox" id="answer1" value="blah blah blah">
-            <label for="answer1">Blah blah blah</label></li>
-        </ol>
-    </div>
-    <button class="card-button">Submit</button>
+<div class="question hideQuestion">
+    <h3 class="question-title"></h3><br>
+    <div class= "card-container">
+        <p class="answer-container"></p><br>
+        <p class="answer-container2"></p><br>
+        <p class="answer-container3"></p><br>
+        <p class="answer-container4"></p>
 </div>
 </div>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</div>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -34,10 +34,11 @@
 
 .score {
     justify-content: center;
+    padding: 5px;
 }
 
 .last-score {
-
+    padding: 5px
 }
 
 .title-container {
@@ -70,11 +71,22 @@
     
 }
 
-.card,
+.card {
+    text-align: center;
+    box-shadow: 0 4px 8px 0;
+    padding: 10px;
+}
+
 .question {
     text-align: center;
     box-shadow: 0 4px 8px 0;
     padding: 10px;
+    
+}
+
+.hideQuestion{
+    display: none;
+
 }
 
 .card-container {
