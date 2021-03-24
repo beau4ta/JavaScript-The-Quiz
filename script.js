@@ -1,69 +1,124 @@
+//setting global variables
 var timerContain = document.querySelector(".timer-container");
 var timeCount = document.querySelector(".time-count");
-var startBtn = document.querySelector(".start-button");
-var submitBtn = document.querySelector(".submit-button");
 var timeLeft;
-var startCard = document.querySelector(".card");
-var questCard = document.querySelector(".question");
-var questTitle = document.querySelector(".question-title")
-var answerDiv = document.querySelector(".answer-container")
-var answerDiv2 = document.querySelector(".answer-container2")
-var answerDiv3 = document.querySelector(".answer-container3")
-var answerDiv4 = document.querySelector(".answer-container4")
-var score = document.querySelector(".last-score");
-var lastScore = 0;
-var question = 0;
-var answers = 0;
+var score = document.querySelector(".current-score");
+var currentScore = 0;
+var startButton = document.querySelector(".start-button");
+
+var currentQuestion = 0;
+var correctAns = true;
+
+//creating an array containing questions and answers
 var questionAnswer = [
     {
         question: "What does JavaScript stand for?",
         answers: [
-            "Just Average Video Applications Script",
-            "JavaScript",
-            "Nothing",
-            "Join Amazing Versions of Awesome Script"
-        ],
-        correct: "JavaScript"
+        " Just Average Video Applications Script",
+        " JavaScript",
+        " Nothing",
+        " Join Amazing Versions of Awesome Script", 
+    ],
+        correct: "Javascript"
     },
     {
         question: "How do you hide an element?",
         answers: [
-            "You just do", 
-            "You can't",
-            "You can change the visibility by changing the CSS via JavaScript",
-            "You can use a switch function that toggles visibility",
+        " You just do",   
+        " You can't",
+        " You can change the visibility by changing the CSS via JavaScript",
+        " You can use a switch function that toggles visibility",
         ],
         correct: "You can change the visibility by changing the CSS via JavaScript"
     },
     {
         question: "What is an event listener?",
         answers: [
-            "A function that 'listens' for an event to occur", 
-            "A function that always makes an action happen on click",
-            "An object inside of your HTML",
-            "A cool, fast way to style your CSS",
+        " A function that 'listens' for an event to occur", 
+        " A function that always makes an action happen on click",
+        " An object inside of your HTML",
+        " A cool, fast way to style your CSS",
         ],
         correct: "A function that 'listens' for an event to occur"
     },
     {
         question: "How do you select an element?",
         answers: [
-            "document.querySelector()",
-            "Click on it",
-            "document.selectElement()",
-            "Highlight the element"
+        " document.querySelector()",
+        " Click on it",
+        " document.selectElement()",
+        " Highlight the element",
         ],
         correct: "document.querySelector()"
+    },
+    {
+        question: "How do you create a function?",
+        answers: [
+        " function myFunction();",
+        " 2 + 2 = function",
+        " ()function[example]",
+        " All the above",
+        ],
+        correct: "function myFunction();"
     }
-]
+];
+
+var scorePoints = 10;
 
 function startQuiz() {
-    timeLeft = 120;
+    hideStart();
 
+    timeLeft = 120;
     countdown();
-    hideStartCard();
-    hideQuest();
+
+    currentScore = 0;
+    getQuest();
+
+    playAudio();
+
 };
+
+function getQuest() {
+
+
+    // var firstQuest = document.createElement("div");
+    // var someAns = document.createElement('div');
+    
+    // questionAnswer.forEach(function (item) {
+    //     console.log(item);
+    //     var listQuest = document.createElement("h1");
+    //     listQuest.textContent = item.question;
+    //     firstQuest.appendChild(listQuest);
+
+    //     var listAns = document.createElement("p");
+    //     listAns.textContent = item.answers;
+    //     someAns.appendChild(listAns);
+
+    //     console.log(listQuest);
+    //     console.log(listAns);
+
+    //     var questCon = document.querySelector(".question-container");
+    //     questCon.appendChild(firstQuest);
+
+    //     var answerCon = document.querySelector(".answer-container");
+    //     answerCon.appendChild(someAns);
+
+    //     listQuest.setAttribute("class", "question")
+    //     listAns.setAttribute("class", "answer-text")
+       
+    //  });
+    };
+ 
+function hideStart() {
+    // hides start button/card
+    var startCard = document.querySelector(".card");
+    if (startCard.style.display === "none") {
+        startCard.style.display = "block"
+    } else {
+        startCard.style.display = "none"
+    };
+};
+
     
 function countdown() {
     //set timer
@@ -76,50 +131,19 @@ function countdown() {
             alert("Time Up!");
         }
     }, 500);
-    saveScore();
+    // saveScore();
 };
 
-
-
-function hideQuest() {
-    questCard.classList.remove('hideQuestion');
-    var currentQuest = questionAnswer [question]
-    questTitle.textContent = currentQuest.question
-    var listAnswer = questionAnswer [answers]
-   var button1 = document.createElement("button");
-   var button2 = document.createElement("button");
-   var button3 = document.createElement("button");
-   var button4 = document.createElement("button");
-   var text1 = document.createTextNode(listAnswer.answers[0]);
-   var text2 = document.createTextNode(listAnswer.answers[1]);
-   var text3 = document.createTextNode(listAnswer.answers[2]);
-   var text4 = document.createTextNode(listAnswer.answers[3]);
-   button1.appendChild(text1);
-   button2.appendChild(text2);
-   button3.appendChild(text3);
-   button4.appendChild(text4);
-   answerDiv.appendChild(button1);
-   answerDiv2.appendChild(button2);
-   answerDiv3.appendChild(button3);
-   answerDiv4.appendChild(button4);
-   
-};
-
-function hideStartCard() {
-    if (startCard.style.display === "none") {
-        startCard.style.display = "block"
-         
-    } else {
-        startCard.style.display = "none" 
-    }
-
+function playAudio() {
+    var song = document.querySelector(".song")
+    song.play();
 }
 
 
-function saveScore() {
-score.textContent = lastScore;
-localStorage.setItem("Scores", lastScore);
-}
+// function saveScore() {
+// score.textContent = currentScore;
+// localStorage.setItem("Scores", currentScore);
+// }
 
-
-startBtn.addEventListener("click", startQuiz);
+//starts quiz on click, triggering other functions
+startButton.addEventListener("click", startQuiz);
