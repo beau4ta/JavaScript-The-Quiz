@@ -81,32 +81,32 @@ function startQuiz() {
 function getQuest() {
 
 
-    // var firstQuest = document.createElement("div");
-    // var someAns = document.createElement('div');
+    var firstQuest = document.createElement("div");
+    var someAns = document.createElement('div');
     
-    // questionAnswer.forEach(function (item) {
-    //     console.log(item);
-    //     var listQuest = document.createElement("h1");
-    //     listQuest.textContent = item.question;
-    //     firstQuest.appendChild(listQuest);
+    questionAnswer.forEach(function (item) {
+        console.log(item);
+        var listQuest = document.createElement("h1");
+        listQuest.textContent = item.question;
+        firstQuest.appendChild(listQuest);
 
-    //     var listAns = document.createElement("p");
-    //     listAns.textContent = item.answers;
-    //     someAns.appendChild(listAns);
+        var listAns = document.createElement("p");
+        listAns.textContent = item.answers;
+        someAns.appendChild(listAns);
 
-    //     console.log(listQuest);
-    //     console.log(listAns);
+        console.log(listQuest);
+        console.log(listAns);
 
-    //     var questCon = document.querySelector(".question-container");
-    //     questCon.appendChild(firstQuest);
+        var questCon = document.querySelector(".question-container");
+        questCon.appendChild(firstQuest);
 
-    //     var answerCon = document.querySelector(".answer-container");
-    //     answerCon.appendChild(someAns);
+        var answerCon = document.querySelector(".answer-container");
+        answerCon.appendChild(someAns);
 
-    //     listQuest.setAttribute("class", "question")
-    //     listAns.setAttribute("class", "answer-text")
+        listQuest.setAttribute("class", "question")
+        listAns.setAttribute("class", "answer-text")
        
-    //  });
+     });
     };
  
 function hideStart() {
