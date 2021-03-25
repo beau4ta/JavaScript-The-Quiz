@@ -2,12 +2,15 @@
 var timerContain = document.querySelector(".timer-container");
 var timeCount = document.querySelector(".time-count");
 var timeLeft;
-var score = document.querySelector(".current-score");
+
 var currentScore = 0;
 var startButton = document.querySelector(".start-button");
+var clearButton = document.querySelector(".highscore-button")
+var initials;
 
 var currentQuestion = 0;
 var correctAns = true;
+var showHighscore = [];
 
 //creating an array containing questions and answers
 var questionAnswer = [
@@ -19,7 +22,7 @@ var questionAnswer = [
         " Nothing",
         " Join Amazing Versions of Awesome Script", 
     ],
-        correct: "Javascript"
+        correct: "JavaScript"
     },
     {
         question: "How do you hide an element?",
@@ -78,36 +81,53 @@ function startQuiz() {
 
 };
 
-function getQuest() {
 
+
+function getQuest() {
 
     var firstQuest = document.createElement("div");
     var someAns = document.createElement('div');
-    
-    questionAnswer.forEach(function (item) {
-        console.log(item);
-        var listQuest = document.createElement("h1");
-        listQuest.textContent = item.question;
+    var listQuest = document.createElement("h1");
+
+        
+        listQuest.textContent = questionAnswer[currentQuestion].question;
+        listQuest.setAttribute("class", "question")
         firstQuest.appendChild(listQuest);
 
-        var listAns = document.createElement("p");
-        listAns.textContent = item.answers;
+        questionAnswer[currentQuestion].answers.forEach(function (item) {
+            console.log(item);
+        var listAns = document.createElement("button");
+        listAns.textContent = item;
+        listAns.setAttribute("class", "answer-text")
+        listAns.setAttribute("value", item)
+        listAns.onclick = answerClick();
         someAns.appendChild(listAns);
-
-        console.log(listQuest);
-        console.log(listAns);
-
         var questCon = document.querySelector(".question-container");
         questCon.appendChild(firstQuest);
-
         var answerCon = document.querySelector(".answer-container");
         answerCon.appendChild(someAns);
-
-        listQuest.setAttribute("class", "question")
-        listAns.setAttribute("class", "answer-text")
-       
+ 
      });
-    };
+     
+     function answerClick() {
+        console.log(this.value)
+        }
+
+        if (this.value === questionAnswer[currentQuestion].correct) {
+               currentQuestion++;
+               questCon.innerHTML = ''
+               answerCon.innerHTML = ''
+               getQuest();
+           } else { 
+               
+        };
+    
+    }
+
+  
+        
+
+    
  
 function hideStart() {
     // hides start button/card
@@ -119,7 +139,49 @@ function hideStart() {
     };
 };
 
+function getInitials() {
+    initials = prompt("Enter Initials");
+
+    if (initials)
+    initials = localStorage.setItem("initials")
+
+
+        };
+
+        console.log(localStorage.setItem("initials", initials));
+
     
+
+function showHigh (){
+
+    var showScore = document.createElement("div")
+    var showInitials = document.createElement("div")
+    var listInitials = document.createElement("td");
+    var listScore = document.createElement("td");
+    var initialCon = document.querySelector(".initials-container")
+    var scoreCon = document.querySelector(".score-container")
+
+
+    showHighscore.forEach(function (showScore) {
+        showScore.textContent = localStorage.getItem("scores");
+        console.log(scoreCon);
+       });
+    
+    listInitials.textContent = localStorage.getItem("initials");   
+    showInitials.appendChild(listInitials);
+    initialCon.appendChild(showInitials);
+    showInitials.setAttribute("class", "initial-style")
+    
+    listScore.textContent = localStorage.getItem("Scores")
+   showScore.appendChild(listScore);
+   scoreCon.appendChild(showScore);
+   showScore.setAttribute("class", "score-style")
+
+   
+   
+    
+};
+
 function countdown() {
     //set timer
     timerContain = setInterval(function() {
@@ -128,22 +190,24 @@ function countdown() {
 
         if (timeLeft === 0) {
             clearInterval(timerContain);
-            alert("Time Up!");
+            getInitials();
+            saveScore();
         }
-    }, 500);
-    // saveScore();
+    }, 1000);
+    
 };
 
 function playAudio() {
     var song = document.querySelector(".song")
     song.play();
-}
+
+};
 
 
-// function saveScore() {
-// score.textContent = currentScore;
-// localStorage.setItem("Scores", currentScore);
-// }
+function saveScore() {
+score.textContent = currentScore;
+localStorage.setItem("scores", currentScore);
+};
 
 //starts quiz on click, triggering other functions
 startButton.addEventListener("click", startQuiz);

@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript: The Quiz Highscores</title>
+    <link href="highscores.css" rel="stylesheet">
 </head>
 <body>
-    <div 
+    <div class="highscores-container">
+        <h1 class="highscore-title">HIGHSCORES</h1>
+    <div class="highscore-list">
+        <table class="score-table" style="width:100%">
+            <tr>
+              <th>Initials</th>
+              <th>Score</th>
+            </tr>
+            <tr>
+                <th class="initials-container">
+                </th>
+                <th class="score-container">
+            </tr>
+          </table>
+    </div>
+    <div class="highscore-button-container">
+    <button onclick="location.href='index.html';" class="highscore-button">Back to Main</button>
+    <button class="highscore-button">Clear Highscore</button>
+    </div>
+    </div>
     
+    <script src="script.js"></script>
 </body>
 </html>
