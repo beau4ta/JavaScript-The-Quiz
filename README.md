@@ -23,5 +23,5 @@ GitHub: https://github.com/beau4ta/JavaScript-The-Quiz
 
 Live Page: https://beau4ta.github.io/JavaScript-The-Quiz/
 
-<img href="quizpic1.png"></img>
-<img href="quizpic2.png"></img>
+<img src="quizpic1.png">
+<img src="quizpic2.png">
