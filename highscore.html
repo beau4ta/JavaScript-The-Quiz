@@ -21,13 +21,15 @@
                 <th class="score-container">
             </tr>
           </table>
+          <p>Notice: Refresh after clearing highscores</p>
     </div>
     <div class="highscore-button-container">
     <button onclick="location.href='index.html';" class="highscore-button">Back to Main</button>
-    <button class="highscore-button">Clear Highscore</button>
+    <button onclick="localStorage.clear();" class="highscore-button">Clear Highscore</button>
+    <button onclick="location.reload();" class="highscore-button">Refresh</button>
     </div>
     </div>
     
-    <script src="script.js"></script>
+    <script src="highscore.js"></script>
 </body>
 </html>

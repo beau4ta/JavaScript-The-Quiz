@@ -19,25 +19,27 @@
         </div>
         <div class="score-container">
             <p class="score">Score:</p>
-            <p class="current-score"></p>
+            <div class="current-score"></div>
         </div>
-        </div>
+    </div>
+        
 
 <div class="title-container">
     <h1 class="title">JavaScript: The Quiz</h1>
     <h2 class="sub-title">Answer the questions within the time limit!
-        Every wrong answer subtracts 5 seconds from the timer.<br> 
+        Every wrong answer subtracts 5 seconds from the timer.
         The game ends when you answer all the questions or
-        you run out of time. Try for a highscore!
+        you run out of time. If you answer all the questions before the time runs outour score is the amount of time left!
     </h2>
 </div>
 
 <div class="card-flex">
     <div class="card">
-        <h3>Click the Start button to start!</h3><br>
+        <h3 class="start-title">Click the Start button to start!</h3><br>
         <div class="card-container">
             <button class="start-button">Start</button>
             <button onclick="location.href='highscore.html';" class="highscore-button">Highscores</button>
+            <button onclick="location.reload();" class="refresh-button">Refresh</button>
         </div>
     </div>
     </div>

@@ -60,3 +60,11 @@
     font-size: 2rem;
 }
 
+p {
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: purple;
+}
+
