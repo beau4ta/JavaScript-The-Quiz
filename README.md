@@ -14,14 +14,13 @@ A timed quiz on the subject of JavaScript
 
 ## JavaScript
 * This project is mainly JavaScript.
-* There is still a lot of work to do here.
-* The quiz isn't fully functional but there are a few working things.
 * The timer counts down and subtracts 10 seconds when a wrong answer is clicked, turning the answer red.
-* +10 score is added when a right answer is clicked.
+* +10 score is added when a right answer is clicked, turning the answer green.
 * All the buttons work.
-* The highscore page saves your last score (still working to save multiple scores).
+* The highscore page saves your initials and score.
 * Music plays on start.
-* Still working on an end game function.
+* When time runs out, or you cycle through the questions the game ends prompting you to enter your initials to save your score.
+* Enjoy!
 
 
 GitHub: https://github.com/beau4ta/JavaScript-The-Quiz
